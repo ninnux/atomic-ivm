@@ -1,0 +1,10 @@
+#!/bin/bash
+RESOURCE=$1
+AVAILABLE_RESOURCE=`cat $RESOURCE | grep -v ALLOCATED | head -1`
+if [ -n "$AVAILABLE_RESOURCE" ]; then
+	sed -i 's/'$AVAILABLE_RESOURCE'/'$AVAILABLE_RESOURCE' ALLOCATED/' $RESOURCE
+	echo $AVAILABLE_RESOURCE
+else
+	echo NONE	
+fi
+	
