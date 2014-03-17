@@ -1,6 +1,4 @@
-get_vg_name(){
-        echo jenna
-}
+source lvmlib.sh
 VG_NAME=`get_vg_name`
 cat > /etc/xen/$1.cfg <<DELIM
 #kernel = "/boot/vmlinuz-2.6.32-5-xen-amd64"

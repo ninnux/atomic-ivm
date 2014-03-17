@@ -2,9 +2,7 @@
 TOTAL=18
 ALLOCATED=`cat disk_utilization`
 source disk_space_management.sh
-get_vg_name(){
-        echo jenna
-}
+source lvmlib.sh
 
 dealloca_spazio(){
 	echo lvremove /dev/`get_vg_name`/$1 

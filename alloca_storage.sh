@@ -2,10 +2,7 @@
 TOTAL=30
 ALLOCATED=`cat disk_utilization`
 source disk_space_management.sh
-
-get_vg_name(){
-	echo atomic-dom0
-}
+source lvmlib.sh
 
 alloca_spazio(){
 	disk_available=`disk_request 6`

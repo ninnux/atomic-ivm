@@ -1,6 +1,4 @@
-get_vg_name(){
-        echo atomic-dom0 
-}
+source lvmlib.sh
 source memory_mamagement.sh
 MACHINE_NAME=$1
 VG_NAME=`get_vg_name`
@@ -19,7 +17,7 @@ PUBNETV6=`echo $PUBIPV6NET | awk -F"_" '{print $2}'`
 PRIVIPNET=`./alloca_risorsa.sh privip.allocation`
 PRIVIP=`echo $PRIVIPNET | awk -F"_" '{print $1}'`
 PRIVNET=`echo $PRIVIPNET | awk -F"_" '{print $2}'`
-MEM=`mem_request 1024`
+MEM=`mem_request 512`
 
 if [ "$PUBIP" != "NONE" -a "$PRIVIP" != "NONE" -a "$PUBIPV6" != "NONE" -a "$MEM" != "FULL" ]; then
 	echo $1" "$PUBIPNET" "$PRIVIPNET" "$PUBIPV6NET" "$MEM>> active_nodes.log
