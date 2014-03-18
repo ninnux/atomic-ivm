@@ -16,7 +16,7 @@ function mem_request {
 	if [ $ALLOCATED -lt $TOTAL ]; then
 		ALLOCATED=$((ALLOCATED+REQUEST))
 		echo $ALLOCATED > memory_utilization
-		echo $ALLOCATED
+		echo $REQUEST
 	else
 		echo FULL
 	fi
